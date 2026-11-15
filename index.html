@@ -57,8 +57,8 @@ a{color:inherit;text-decoration:none}
 .tag{background:var(--ink);color:var(--paper);padding:.6rem 1.4rem;transform:rotate(-3deg);border:3px solid var(--paper);font-family:var(--f-a);font-size:1.4rem;letter-spacing:.03em;text-align:right}
 .tag small{display:block;font-family:var(--f-c);font-size:.8rem}
 .big-no{font-family:var(--f-a);font-size:clamp(5rem,16vw,11rem);line-height:.9;background:var(--paper);color:var(--ink);padding:0 1rem;transform:rotate(4deg)}
-.art{width:min(100%,22rem);aspect-ratio:3/4;border:4px dashed var(--paper);background:rgba(10,10,10,.55);display:grid;place-items:center;text-align:center;padding:1rem;font-size:.95rem;transform:rotate(2deg)}
-.art b{display:block;font-family:var(--f-a);font-size:1.6rem;margin-bottom:.3rem}
+.art{width:min(100%,22rem);aspect-ratio:3/4;border:4px dashed var(--paper);background:rgba(10,10,10,.55);display:grid;place-items:center;overflow:hidden;padding:0;transform:rotate(2deg)}
+.art img{display:block;width:100%;height:100%;object-fit:contain}
 
 /* COMMAND BAR */
 .command{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;gap:1.2rem;padding:0 clamp(1rem,5vw,4rem) 1.4rem}
@@ -112,7 +112,7 @@ footer{background:var(--red);padding:1.5rem clamp(1rem,5vw,4rem);display:flex;fl
   <div class="stage">
     <div class="tag">Menu: Main<small>Select a command</small></div>
     <div class="big-no" id="num" aria-hidden="true">01</div>
-    <div class="art"><div><b>Her character art here</b>A cut-out of her own character, mascot, or self-portrait in the Persona style</div></div>
+    <div class="art"><img src="media/PERSONA%20CONCEPT%20ART%20(sept%202026,%20clip%20studio%20paint).PNG" alt="Persona character concept art sheet showing Vanessa's character from several angles"></div>
   </div>
 
   <div class="command" aria-live="polite">
