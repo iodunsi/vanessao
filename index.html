@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Her Name | Animation Portfolio (skeleton)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bowlby+One&family=Special+Elite&family=Rubik+Mono+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --red:#d6120f; --deep:#7a0a0a; --ink:#0a0a0a; --paper:#f4f4f2; --cyan:#35d4e8;
+  --f-a:"Anton",Impact,sans-serif; --f-b:"Bowlby One","Arial Black",sans-serif;
+  --f-c:"Special Elite","Courier New",monospace; --f-d:"Rubik Mono One","Arial Black",sans-serif;
+  --f-e:"Permanent Marker",cursive;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--red:#d6120f;--ink:#0a0a0a;--paper:#f4f4f2}}
+:root[data-theme="dark"]{--red:#d6120f;--ink:#0a0a0a;--paper:#f4f4f2}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--deep);color:var(--paper);font-family:var(--f-c);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+
+/* ransom-note letters */
+.rn span{display:inline-block;padding:.02em .08em;margin:0 .01em;line-height:1}
+.rn .r0{background:var(--paper);color:var(--ink);font-family:var(--f-a);transform:rotate(-3deg)}
+.rn .r1{background:var(--ink);color:var(--paper);font-family:var(--f-b);transform:rotate(2deg) translateY(.05em)}
+.rn .r2{background:var(--paper);color:var(--ink);font-family:var(--f-d);font-size:.85em;transform:rotate(4deg)}
+.rn .r3{background:var(--red);color:var(--paper);font-family:var(--f-a);transform:rotate(-2deg) translateY(-.04em)}
+.rn .r4{background:var(--ink);color:var(--paper);font-family:var(--f-c);font-weight:700;transform:rotate(-4deg)}
+.rn .r5{background:var(--paper);color:var(--ink);font-family:var(--f-b);font-size:.9em;transform:rotate(1deg)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:1rem;padding:2rem clamp(1rem,5vw,4rem) 7rem;
+  background:
+   radial-gradient(circle at 15% 50%,#9b0d0d 0,var(--deep) 70%);
+  isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0 0 0 55%;z-index:-2;opacity:.9;
+  background:repeating-conic-gradient(from 0deg at 70% 45%,var(--paper) 0 6deg,var(--ink) 6deg 12deg);
+  clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.slash{position:absolute;z-index:-1;left:22%;top:12%;width:46%;height:70%;background:var(--red);
+  clip-path:polygon(88% 0,100% 6%,52% 52%,100% 58%,92% 76%,0 100%,20% 40%)}
+
+/* MENU */
+.menu ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.15rem}
+.menu li{margin-left:calc(var(--o)*1.4rem)}
+.menu a{display:inline-block;font-size:clamp(1.6rem,4.2vw,3.1rem);transition:transform .12s}
+.menu a .rn{display:inline-block;filter:drop-shadow(3px 3px 0 var(--ink))}
+.menu a.on{transform:scale(1.18) rotate(-2deg);transform-origin:left center}
+.menu a.on .rn span{background:var(--red);color:var(--paper);box-shadow:-4px 2px 0 var(--cyan)}
+
+/* ART SLOT + TAGS */
+.stage{position:relative;display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
+.tag{background:var(--ink);color:var(--paper);padding:.6rem 1.4rem;transform:rotate(-3deg);border:3px solid var(--paper);font-family:var(--f-a);font-size:1.4rem;letter-spacing:.03em;text-align:right}
+.tag small{display:block;font-family:var(--f-c);font-size:.8rem}
+.big-no{font-family:var(--f-a);font-size:clamp(5rem,16vw,11rem);line-height:.9;background:var(--paper);color:var(--ink);padding:0 1rem;transform:rotate(4deg)}
+.art{width:min(100%,22rem);aspect-ratio:3/4;border:4px dashed var(--paper);background:rgba(10,10,10,.55);display:grid;place-items:center;text-align:center;padding:1rem;font-size:.95rem;transform:rotate(2deg)}
+.art b{display:block;font-family:var(--f-a);font-size:1.6rem;margin-bottom:.3rem}
+
+/* COMMAND BAR */
+.command{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;gap:1.2rem;padding:0 clamp(1rem,5vw,4rem) 1.4rem}
+.command .word{font-family:var(--f-b);font-size:clamp(2.2rem,7vw,5rem);line-height:.9;background:var(--ink);padding:.1em .3em;transform:rotate(-2deg)}
+.command .sub{font-family:var(--f-c);background:var(--paper);color:var(--ink);padding:.3rem .8rem;transform:skewX(-10deg);margin-bottom:.4rem}
+.party{margin-left:auto;display:flex;gap:.5rem}
+.party i{width:3.2rem;height:3.2rem;background:var(--ink);border:3px solid var(--paper);transform:rotate(-6deg)}
+.party i:nth-child(2){transform:rotate(3deg)}
+
+/* FEATURED WORK: confidant-card template */
+.work{background:var(--ink);padding:4rem clamp(1rem,5vw,4rem) 3rem}
+.work h2{font-size:clamp(1.8rem,5vw,3rem);margin:0 0 2rem;font-weight:400}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:2rem}
+.card{background:var(--paper);color:var(--ink);padding:0 0 1rem;border-left:10px solid var(--red);transition:transform .15s}
+.card:hover,.card:focus-visible{transform:rotate(-1.5deg) translateY(-4px)}
+.thumb{aspect-ratio:16/9;background:repeating-linear-gradient(45deg,#d9d9d6 0 12px,#c8c8c4 12px 24px);display:grid;place-items:center;font-size:.85rem}
+.card h3{margin:.8rem 1rem .1rem;font-family:var(--f-a);font-weight:400;font-size:1.7rem}
+.card .meta{margin:0 1rem;display:flex;justify-content:space-between;font-size:.85rem}
+.stars{letter-spacing:.1em;color:var(--red)}
+.card p{margin:.6rem 1rem 0;font-size:.95rem}
+footer{background:var(--red);padding:1.5rem clamp(1rem,5vw,4rem);display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.9rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-bottom:9rem}
+  .hero::before{inset:0;opacity:.35}
+  .stage{align-items:flex-start;flex-direction:row;flex-wrap:wrap}
+  .art{display:none}
+  .party{display:none}
+  .slash{left:8%;width:80%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="slash" aria-hidden="true"></div>
+
+  <nav class="menu" aria-label="Main menu">
+    <ul id="menu">
+      <li style="--o:0"><a href="#work" data-cmd="See the work" data-hint="Projects and shorts">Work</a></li>
+      <li style="--o:1"><a href="#reel" data-cmd="Play the reel" data-hint="Animation reel">Reel</a></li>
+      <li style="--o:2"><a href="#sketchbook" data-cmd="Flip through" data-hint="Process, thumbnails, studies">Sketchbook</a></li>
+      <li style="--o:3"><a href="#about" data-cmd="Meet me" data-hint="About her">About</a></li>
+      <li style="--o:2"><a href="#tools" data-cmd="Check the gear" data-hint="Software and skills">Tools</a></li>
+      <li style="--o:1"><a href="#resume" data-cmd="Read the file" data-hint="Resume and timeline">Resume</a></li>
+      <li style="--o:0"><a href="#contact" data-cmd="Send a message" data-hint="Hire me, say hi">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="stage">
+    <div class="tag">Menu: Main<small>Select a command</small></div>
+    <div class="big-no" id="num" aria-hidden="true">01</div>
+    <div class="art"><div><b>Her character art here</b>A cut-out of her own character, mascot, or self-portrait in the Persona style</div></div>
+  </div>
+
+  <div class="command" aria-live="polite">
+    <div class="word rn" id="cmd" data-static>Command</div>
+    <div class="sub" id="hint">Projects and shorts</div>
+    <div class="party" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<main>
+  <section class="work" id="work">
+    <h2 class="rn">Featured work</h2>
+    <div class="cards">
+      <!-- Repeat one card per project. Arcana = project type, rank = how polished/proud she is of it. -->
+      <a class="card" href="#project-1">
+        <div class="thumb">[ project thumbnail or looping GIF ]</div>
+        <h3>Project title</h3>
+        <div class="meta"><span>Arcana: 2D animation</span><span class="stars" aria-label="Rank 9 of 10">★★★★★★★★★☆</span></div>
+        <p>Last time, on [show or class]: one line about what this piece is and what she did on it.</p>
+      </a>
+      <a class="card" href="#project-2">
+        <div class="thumb">[ project thumbnail ]</div>
+        <h3>Project title</h3>
+        <div class="meta"><span>Arcana: Character design</span><span class="stars" aria-label="Rank 7 of 10">★★★★★★★☆☆☆</span></div>
+        <p>Last time, on [show or class]: one line about this piece.</p>
+      </a>
+      <a class="card" href="#project-3">
+        <div class="thumb">[ project thumbnail ]</div>
+        <h3>Project title</h3>
+        <div class="meta"><span>Arcana: Storyboard</span><span class="stars" aria-label="Rank 5 of 10">★★★★★☆☆☆☆☆</span></div>
+        <p>Last time, on [show or class]: one line about this piece.</p>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© Her Name</span>
+  <span>email@example.com</span>
+  <span>Socials: [links]</span>
+</footer>
+
+<script>
+(function(){
+  function ransom(el){
+    var t=el.textContent, out='';
+    for(var i=0;i<t.length;i++){
+      var ch=t[i];
+      out += ch===' ' ? ' ' : '<span class="r'+((i*7+ch.toLowerCase().charCodeAt(0))%6)+'">'+ch+'</span>';
+    }
+    el.innerHTML=out; el.classList.add('rn');
+  }
+  var links=[].slice.call(document.querySelectorAll('#menu a'));
+  links.forEach(function(a){
+    var s=document.createElement('span'); s.className='rn'; s.textContent=a.textContent; a.textContent=''; a.appendChild(s); ransom(s);
+  });
+  ransom(document.getElementById('cmd'));
+  document.querySelectorAll('.work h2').forEach(ransom);
+
+  var cmd=document.getElementById('cmd'), hint=document.getElementById('hint'), num=document.getElementById('num');
+  function activate(i){
+    links.forEach(function(a,j){a.classList.toggle('on',i===j)});
+    var a=links[i];
+    cmd.textContent=a.dataset.cmd; ransom(cmd);
+    hint.textContent=a.dataset.hint;
+    num.textContent=('0'+(i+1)).slice(-2);
+  }
+  links.forEach(function(a,i){
+    a.addEventListener('mouseenter',function(){activate(i)});
+    a.addEventListener('focus',function(){activate(i)});
+  });
+  document.addEventListener('keydown',function(e){
+    var i=links.indexOf(document.activeElement);
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+      e.preventDefault();
+      var n=i<0?0:(i+(e.key==='ArrowDown'?1:-1)+links.length)%links.length;
+      links[n].focus();
+    }
+  });
+  activate(0);
+})();
+</script>
+</body>
+</html>
