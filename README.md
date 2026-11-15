@@ -1,8 +1,7 @@
 ## Animation Portfolio
 
 
-This is an Animation portfolio that I created for my little sister to showcase her creative work.
-She's an Animation major at Montclair State University. It's Persona 5 themed because that is one of her favorite video games. It is a work in progress, so bare with us as we work out the kinks.
+Welcome to the portfolio I put together for my little sister, Vanessa Odunsi, an Animation major at Montclair State University. Because Persona 5 is one of her all-time favorite games, the site is heavily inspired by its aesthetic. We're still actively building things out and polishing the details, so bear with us as it comes together!
 
 
-[Her LinkedIn](https://www.linkedin.com/in/vanessa-odunsi-3275ab375/)
+[Connect with her on LinkedIn](https://www.linkedin.com/in/vanessa-odunsi-3275ab375/)
